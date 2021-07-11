@@ -1,0 +1,32 @@
+GET http://localhost:8000/api
+Content-Type: application/json
+
+### GET api/users
+GET http://localhost:8000/api/users
+Content-Type: application/json
+
+###GET id
+GET http://localhost:8000/api/users/1
+Content-Type: application/json
+
+###POST new user
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "name": "Philipe",
+    "lastName": "Rua"
+}
+
+###PUT update data
+PUT http://localhost:8000/api/users/2
+content-type: application/json
+
+{
+    "name": "Antônia",
+    "lastName": "Gouveia"
+}
+
+###DELETE data
+DELETE http://localhost:8000/api/users/0
+Content-Type: application/json
