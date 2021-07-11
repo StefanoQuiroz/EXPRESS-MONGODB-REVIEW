@@ -1,0 +1,17 @@
+GET https://pokeapi.co/api/v2/pokemon/
+Content-Type: application/json
+###
+GET https://pokeapi.co/api/v2/pokemon/bulbasaur/
+Content-Type: application/json
+###
+GET https://pokeapi.co/api/v2/pokemon/ivysaur/
+Content-Type: application/json
+###
+GET https://pokeapi.co/api/v2/pokemon/charmander/
+Content-Type: application/json
+###
+GET https://pokeapi.co/api/v2/pokemon/pikachu/
+Content-Type: application/json
+###
+GET https://pokeapi.co/api/v2/pokemon/300/
+Content-Type: application/json
