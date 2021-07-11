@@ -1,0 +1,8 @@
+###GET new user
+GET http://localhost:8000/api/users/new
+
+###GET a new company or company name
+GET http://localhost:8000/api/companies/new
+
+###GET a newUser with usuario y empresa
+GET  http://localhost:8000/api/user/company
