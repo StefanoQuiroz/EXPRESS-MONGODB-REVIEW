@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const PORT = 8000;
 
+//classes
+/* 
 class Usuario{
     constructor(){
         this.carneDeIdentidad = faker.datatype.number();
@@ -40,17 +42,46 @@ class Empresa{
 
 const empresa = new Empresa();
 //console.log(empresa);
+ */
+
+//With functions
+const usuario = () => ({
+    carneDeIdentidad : faker.datatype.number(),
+    primerNombre : faker.name.firstName(),
+    apellido : faker.name.lastName(),
+    numeroDeTelefono : faker.phone.phoneNumber(),
+    email : faker.internet.email(),
+    contrasenha : faker.internet.password()
+})
+const Usuario = usuario();
+
+const direccion = () => ({
+    calle : faker.address.streetAddress(),
+    ciudad : faker.address.city(),
+    estado : faker.address.state(),
+    codigoPostal : faker.address.zipCode(),
+    pais : faker.address.country()
+})
+const Direccion = direccion();
+
+const empresa = () => ({
+    carneDeEmpresa : faker.datatype.number(),
+    nombre : faker.company.companyName(),
+    direccion : Direccion
+
+})
+const Empresa = empresa();
 
 app.get('/api/users/new', (req, res) => {
-    res.json(usuario);
+    res.json(Usuario);
 })
 
 app.get('/api/companies/new', (req, res) => {
-    res.json(empresa)
+    res.json(Empresa)
 })
 
 app.get('/api/user/company', (req, res) => {
-    const newUser = {usuario, empresa};
+    const newUser = {Usuario, Empresa};
     res.json(newUser);
 })
 
