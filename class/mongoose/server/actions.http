@@ -1,0 +1,28 @@
+###GET USERS
+GET http://localhost:8000/api/users
+
+###GET USER WITH ID
+GET http://localhost:8000/api/users/60ecc349d6392f4e84b7ce34
+
+###POST USER
+POST http://localhost:8000/api/users/new
+Content-Type: application/json
+
+{
+    "name" : "Joaco",
+    "lastName" : "Maurtua",
+    "age" : 22
+}
+
+###UPDATE USER WITH ID
+PUT http://localhost:8000/api/users/update/60ecc349d6392f4e84b7ce34
+Content-Type: application/json
+
+{
+    "name":"Piero",
+    "lastName" : "Lugo",
+    "age" : 27
+}
+
+###DELETE USER WITH ID
+DELETE http://localhost:8000/api/users/delete/60ecc349d6392f4e84b7ce34
