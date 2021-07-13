@@ -12,7 +12,7 @@ const findJokes = async(req, res) => {
 }
 
 const findOneJoke = async(req, res) => {
-    const {id} = req.params.id;
+    const id = req.params.id;
     try{
         const joke = await Joke.findOne({_id: id});
         res.json(joke)
@@ -24,9 +24,9 @@ const findOneJoke = async(req, res) => {
 }
 
 const createJoke = async(req, res) => {
-    const {newData} = req.body;
+    const newData= req.body;
     try{
-        const newJoke = await Joke.create({newData});
+        const newJoke = await Joke.create(newData);
         res.json(newJoke)
     }
     catch(err){
@@ -36,8 +36,8 @@ const createJoke = async(req, res) => {
 }
 
 const updateJoke = async(req, res) => {
-    const {id} = req.params.id;
-    const {newData} = req.body;
+    const id = req.params.id;
+    const newData = req.body;
     try{
         const updateJokes = await Joke.findOneAndUpdate({_id:id}, newData, {new:true});
         res.json(updateJokes)
@@ -49,7 +49,7 @@ const updateJoke = async(req, res) => {
 }
 
 const removeJoke = async(req, res) => {
-    const {id} = req.params.id;
+    const id = req.params.id;
     try{
         const remove = await Joke.deleteOne({_id:id});
         res.json(remove);

@@ -1,0 +1,26 @@
+###GET ALL JOKES
+GET http://localhost:8000/api/jokes
+
+###GET SINGLE JOKE
+GET http://localhost:8000/api/jokes/60ed3ce1e112811278bd507d
+
+###POST NEW JOKE
+POST http://localhost:8000/api/jokes/new
+Content-Type: application/json
+
+{
+    "setup" : "One mistake and you have to support it for the rest of your life.",
+    "punchline" : "Programming is like sex."
+}
+
+###PUT UPDATE JOKE
+PUT http://localhost:8000/api/jokes/update/60ed3e3ee112811278bd5088
+Content-Type: application/json
+
+{
+    "setup" : "Programming is like sex.",
+    "punchline" : "One mistake and you have to support it for the rest of your life."
+}
+
+###DELETE A JOKE
+DELETE http://localhost:8000/api/jokes/delete/60ed3ce1e112811278bd507d
